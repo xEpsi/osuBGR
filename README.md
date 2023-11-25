@@ -21,8 +21,8 @@ pip install -r requirements.txt
 Then set up your settings in osuBGR.py:
 
 ```python
-mode = "replace" / "restore"
-custom_image = r"image path" / None
+mode = "replace" or "restore"
+custom_image = r"image path" or None
 ```
 
 Then run the script:
