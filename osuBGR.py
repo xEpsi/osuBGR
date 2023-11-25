@@ -37,23 +37,22 @@ if mode == "replace":
     if not custom_image:
         logging.info(f"Custom image not specified, please enter RGB values: (From 0 -> 255){sr}")
         red, green, blue = None, None, None
-        
-        while not all([red, green, blue]):
-            while red is None:
-                try:
-                    red = int(input(f"{Fore.RED}Red:{sr} "))
-                except ValueError:
-                    logging.error(f"Invalid value{sr}")
-            while green is None:
-                try:
-                    green = int(input(f"{Fore.GREEN}Green:{sr} "))
-                except ValueError:
-                    logging.error(f"Invalid value{sr}")
-            while blue is None:
-                try:
-                    blue = int(input(f"{Fore.BLUE}Blue:{sr} "))
-                except ValueError:
-                    logging.error(f"Invalid value{sr}")
+    
+        while red is None:
+            try:
+                red = int(input(f"{Fore.RED}Red:{sr} "))
+            except ValueError:
+                logging.error(f"Invalid value{sr}")
+        while green is None:
+            try:
+                green = int(input(f"{Fore.GREEN}Green:{sr} "))
+            except ValueError:
+                logging.error(f"Invalid value{sr}")
+        while blue is None:
+            try:
+                blue = int(input(f"{Fore.BLUE}Blue:{sr} "))
+            except ValueError:
+                logging.error(f"Invalid value{sr}")
                     
         logging.info(f"Creating image...{sr}")
         img = Image.new("RGB", (1920, 1080), color=(red, green, blue))
