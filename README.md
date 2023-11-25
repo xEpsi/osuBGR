@@ -38,5 +38,4 @@ Contributions are welcome! Please create an issue or pull request.
 
 ## Contact
 
-You can contact me on Discord: `@epsi.`
-Discord server: [discord.epsi.space](https://discord.epsi.space)
+You can contact me on Discord: `@epsi.` or in my server: [discord.epsi.space](https://discord.epsi.space)
