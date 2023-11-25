@@ -1,11 +1,12 @@
 """
+osu! Background Replacer
 This program replaces all osu! backgrounds with a custom image.
 It can also restore the backgrounds to their original state.
 """
 
 #------- SETTINGS
 
-custom_image = r"chokbar_cat.png" # if None, the program will prompt you to enter RGB values for a custom image
+custom_image = None # if None, the program will prompt you to enter RGB values for a custom image
 #   ^ example: custom_image = r"C:\Users\user\Desktop\image.png" (recommended resolution: 1920x1080)
 
 mode = "replace" # replace, restore
@@ -38,17 +39,17 @@ if mode == "replace":
         red, green, blue = None, None, None
         
         while not all([red, green, blue]):
-            while not red:
+            while red is None:
                 try:
                     red = int(input(f"{Fore.RED}Red:{sr} "))
                 except ValueError:
                     logging.error(f"Invalid value{sr}")
-            while not green:
+            while green is None:
                 try:
                     green = int(input(f"{Fore.GREEN}Green:{sr} "))
                 except ValueError:
                     logging.error(f"Invalid value{sr}")
-            while not blue:
+            while blue is None:
                 try:
                     blue = int(input(f"{Fore.BLUE}Blue:{sr} "))
                 except ValueError:
@@ -66,7 +67,9 @@ if mode == "replace":
         else:
             logging.error(f"Image not found at {custom_image}{sr}")
             exit(1)
-        
+    
+    
+    
 #------- CODE
 
 import glob
