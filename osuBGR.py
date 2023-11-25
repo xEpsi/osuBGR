@@ -6,7 +6,7 @@ It can also restore the backgrounds to their original state.
 
 #------- SETTINGS
 
-custom_image = None # if None, the program will prompt you to enter RGB values for a custom image
+custom_image = r"osu.jpg" # if None, the program will prompt you to enter RGB values for a custom image
 #   ^ example: custom_image = r"C:\Users\user\Desktop\image.png" (recommended resolution: 1920x1080)
 
 mode = "replace" # replace, restore
@@ -83,7 +83,9 @@ if mode == "replace":
                 if os.path.isfile(file):
                     if file.endswith(".jpg") or file.endswith(".jpeg") or file.endswith(".png"):
                         logging.info(f"Background: {file}{sr}")
-                        shutil.copy(file, file + ".bak")
+                        if not os.path.isfile(file + ".bak"):
+                            shutil.copy(file, file + ".bak")
+                            logging.debug(f"Created backup of {file}{sr}")
                         os.remove(file)
                         shutil.copy(image_path, file)
                         logging.debug(f"Replaced {file} with {image_path}{sr}")
@@ -102,3 +104,5 @@ elif mode == "restore":
 else:
     logging.error(f"Invalid mode: {mode}{sr}")
     exit(1)
+    
+logging.info(f"Done!{sr}")
