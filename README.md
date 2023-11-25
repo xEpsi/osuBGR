@@ -8,7 +8,7 @@ It can also restore the backgrounds to their original state.
 
 - [Installation](#installation)
 - [Contributing](#contributing)
-
+- [Contact](#contact)
 
 ## Installation
 
@@ -31,7 +31,12 @@ Then run the script:
 python osuBGR.py
 ```
 
-
 ## Contributing
 
 Contributions are welcome! Please create an issue or pull request.
+
+
+## Contact
+
+You can contact me on Discord: `@epsi.`
+Discord server: [discord.epsi.space](https://discord.epsi.space)
